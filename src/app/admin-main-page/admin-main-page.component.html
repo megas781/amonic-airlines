@@ -1,0 +1,37 @@
+<div>
+
+  <div class="flex-div" style="justify-content: flex-start">
+
+    <div>Office</div>
+    <select name="office" id="office">
+      <option value="the-only-one">The only one</option>
+    </select>
+
+  </div>
+
+  <table>
+    <thead>
+    <tr style="font-weight: bold">
+      <td>Name</td>
+      <td>Last Name</td>
+      <td>Age</td>
+      <td>User Role</td>
+      <td>Email Address</td>
+      <td>Office</td>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{user['Firstname']}}</td>
+      <td>{{user['Lastname']}}</td>
+      <td>{{user['Birthdate']}}</td>
+      <td>{{user['RoleID']}}</td>
+      <td>{{user['Email']}}</td>
+      <td>{{user['OfficeID']}}</td>
+    </tr>
+    </tbody>
+
+    <tfoot></tfoot>
+  </table>
+</div>
