@@ -11,7 +11,7 @@ import { HeaderComponent } from './master/header/header.component';
 import { FooterComponent } from './master/footer/footer.component';
 import {UsersService} from "./users.service";
 import { RouterModule } from '@angular/router';
-import { NotFoundPageComponent } from './master/not-found-page/not-found-page.component';
+import { NotFoundPageComponent } from './general-pages/not-found-page/not-found-page.component';
 import { UserPageComponent } from './user-list-page/user-page/user-page.component';
 
 
@@ -33,12 +33,10 @@ import { UserPageComponent } from './user-list-page/user-page/user-page.componen
     // в параметре метода forRoot декларируем все пути
     RouterModule.forRoot([
       { path: "", component: LoginPageComponent },
+      // specific urls must be delcared first
       { path: "user_list/:user_id", component: UserListPageComponent },
       { path: "user_list", component: UserListPageComponent },
       { path: "**", component: NotFoundPageComponent},
-      // "user"-like links a till generic. The thing is that specific urls must be delcared first
-      // { path: "users/:username"},
-      // { path: "users"},
     ])
   ],
   providers: [UsersService],
