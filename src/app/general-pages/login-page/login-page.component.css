@@ -1,0 +1,12 @@
+.form-error-log {
+
+}
+.form-error-log-item {
+    color: red;
+    font-size: small;
+    font-style: italic;
+    padding-left: 1em;
+}
+.form-error-log-item::before {
+    content: "- ";
+}

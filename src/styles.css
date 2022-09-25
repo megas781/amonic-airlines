@@ -1,9 +1,13 @@
+@import url(./fonts.css);
+
 /* You can add global styles to this file, and also import other style files */
 body {
   margin: 0;
 
   --main-blue: #196aa6;
   --main-orange: #f79420;
+  --light-gray: rgb(246, 246, 246);
+  font-family: TeXGyreAdventor;
 }
 .flex-div {
   display: flex;

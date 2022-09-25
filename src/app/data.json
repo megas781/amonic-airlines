@@ -35,6 +35,30 @@
       "Birthdate":"2/3/1991",
       "Active": 0,
       "Title": "lorem ipsum"
+    },
+    {
+      "ID":4,
+      "RoleID":1,
+      "Email":"k.omar@amonic.com",
+      "Firstname":"Karim",
+      "Lastname":"Omar",
+      "OfficeID": 1,
+      "Password":"4258",
+      "Birthdate":"3/19/1980",
+      "Active": 1,
+      "Title": "lorem ipsum"
+    },
+    {
+      "ID":5,
+      "RoleID":1,
+      "Email":"m.osteen@amonic.com",
+      "Firstname":"Milagros",
+      "Lastname":"Osteen",
+      "OfficeID": 1,
+      "Password":"9800",
+      "Birthdate":"2/3/1991",
+      "Active": 0,
+      "Title": "lorem ipsum"
     }
   ],
   "Offices": [
