@@ -1,1 +1,14 @@
-<p>user-page works!</p>
+<div *ngIf="this.theUser != null, then userBlock else noUserFoundBlock"></div>
+<ng-template #userBlock>
+    <div>
+        the user block! <br>
+        name: {{this.theUser.toString()}} <br>
+        birthdate: {{this.theUser.age}} <br>
+        and some other data...
+    </div>
+</ng-template>
+<ng-template #noUserFoundBlock>
+    <div>
+        sorry, no user found :(
+    </div>
+</ng-template>

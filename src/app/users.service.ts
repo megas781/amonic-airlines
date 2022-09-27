@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import dataA from './data.json';
+import dataA from './mock-data/users.json';
 
 
 @Injectable({
@@ -14,9 +14,19 @@ export class UsersService {
     return this.users
   }
 
+  getUserById(id: number): User {
+    for (let i = 0; i < this.users.length; i++) {
+      if (id == this.users[i].id) {
+        return this.users[i];
+      }
+      
+    }
+    return null;
+  }
+
   constructor() {
 
-    let fetchedUsers = dataA['Users'];
+    let fetchedUsers = dataA;
 
     if (Array.isArray(fetchedUsers)) {
       // console.log('it is array!');
@@ -29,9 +39,12 @@ export class UsersService {
     }
 
   }
+
+
 }
 
 export class User extends Object {
+  id: String;
   firstname: String;
   lastname: String;
   age: String;
@@ -42,6 +55,7 @@ export class User extends Object {
 
   constructor(jsonObject: any) {
     super();
+    this.id = String(jsonObject['ID']);
     this.firstname = String(jsonObject['Firstname']);
     this.lastname = String(jsonObject['Lastname']);
     this.age = String(jsonObject['Birthdate']);

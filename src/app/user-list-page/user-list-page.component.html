@@ -2,11 +2,14 @@
   <div style="display:block;">
     <div class="flex-div" style="justify-content: flex-start;">
 
-      <div>Office</div>
+      <button (click)="onAddUserButtonClick()">Add User</button>
+
+      <div style="margin-right: 8px;">Office:</div>
       <select name="office" id="office">
         <option value="the-only-one">The only one</option>
       </select>
-
+      <button>Change Role</button>
+      <button>Enable/Disable Login</button>
     </div>
 
     <table style="width: 100%">
@@ -22,18 +25,14 @@
       </thead>
 
       <tbody>
-        <tr *ngFor="let user of userService.users, index as i">
-          <td>{{ i}} - {{user.firstname}}</td>
+        <tr *ngFor="let user of userService.users, index as i" [routerLink]="['/user_list', user.id]">
+          <td>{{i}} - {{user.firstname}}</td>
           <td>{{user.lastname}}</td>
           <td>{{user.age}}</td>
-
           <div [ngSwitch]="user.role">
-            <td *ngSwitchCase="0" style="font-weight: bold">Admin</td>
-            <td *ngSwitchCase="1" style="font-weight: normal">User</td>
+            <td *ngSwitchCase="1" style="font-weight: normal">Admin</td>
+            <td *ngSwitchCase="2" style="font-weight: normal">User</td>
           </div>
-
-
-
           <td>{{user.email}}</td>
           <td>{{user.officeId}}</td>
 

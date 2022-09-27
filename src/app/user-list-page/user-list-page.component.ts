@@ -19,4 +19,7 @@ export class UserListPageComponent implements OnInit {
     console.log(this.userService)
   }
 
+  onAddUserButtonClick() {
+    
+  }
 }

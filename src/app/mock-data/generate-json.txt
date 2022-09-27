@@ -1,0 +1,53 @@
+https://json-generator.com/
+
+
+users:
+[
+  '{{repeat(150)}}',
+  {
+    ID: '{{index() + 1}}',
+    RoleID: '{{integer(1,2)}}',
+    OfficeID: '{{integer(1,5)}}',
+    Active: '{{integer(0,1)}}',
+    Birthdate: '{{integer(1970, 2000) + "-" + integer(1, 30) + "-" + integer(1, 12) }}',
+    Firstname: '{{firstName()}}',
+    Lastname: '{{surname()}}',
+    Title: '{{lorem(3, "words")}}',
+    Password: '{{integer(0,9)}}{{integer(0,9)}}{{integer(0,9)}}{{integer(0,9)}}',
+    Email: '{{email()}}'
+    
+  }
+]
+
+roles:
+[
+  '{{repeat(2)}}',
+  {
+    ID: '{{index() + 1}}',
+    Title: ''
+    
+  }
+]
+
+offices:
+[
+  '{{repeat(5)}}',
+  {
+    ID: '{{index() + 1}}',
+    CountryID: '{{integer(1,9)}}',
+    Title: '{{lorem(1,"words")}}',
+    Phone: '{{"+" + integer(1,7) + " " + phone("(xxx) xxx-xx-xx")}}',
+    Contact: '{{lorem(6,"words")}}'
+  }
+]
+
+countries:
+[
+  '{{repeat(9)}}',
+  {
+    ID: '{{index() + 1}}',
+    Title: ''
+    
+  }
+]
+
