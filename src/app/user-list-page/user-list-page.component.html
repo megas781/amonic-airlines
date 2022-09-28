@@ -26,7 +26,7 @@
 
       <tbody>
         <tr *ngFor="let user of userService.users, index as i" [routerLink]="['/user_list', user.id]">
-          <td>{{i}} - {{user.firstname}}</td>
+          <td>{{user.id}} - {{user.firstname}}</td>
           <td>{{user.lastname}}</td>
           <td>{{user.age}}</td>
           <div [ngSwitch]="user.role">

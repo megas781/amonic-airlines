@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgModel, NgForm, FormControl } from '@angular/forms';
-import { User, UsersService } from '../../users.service';
+import { User, UsersService } from '../../data-services/users.service';
 
 @Component({
   selector: 'app-login-page',

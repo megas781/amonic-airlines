@@ -13,7 +13,7 @@ import { LoginPageComponent } from './general-pages/login-page/login-page.compon
 import { NotFoundPageComponent } from './general-pages/not-found-page/not-found-page.component';
 
 //services
-import {UsersService} from "./users.service";
+import {UsersService} from "./data-services/users.service";
 
 //userList block
 import { UserListPageComponent } from './user-list-page/user-list-page.component';

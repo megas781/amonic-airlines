@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import dataA from './mock-data/users.json';
+import jsonData from '../mock-data/users.json';
 
 
 @Injectable({
@@ -26,7 +26,7 @@ export class UsersService {
 
   constructor() {
 
-    let fetchedUsers = dataA;
+    let fetchedUsers = jsonData;
 
     if (Array.isArray(fetchedUsers)) {
       // console.log('it is array!');
