@@ -2,16 +2,9 @@
     <img style="display: block; margin-bottom: 60px" src="../../assets/recources/Images/DS2017_TP09_color@2x.png"
         alt="Logo">
 
-    <!-- <input [(ngModel)]="veryImpressivePrint" type="text" name="veryImpressive" id="">
-    <button (click)="onVeryImpressiveClick()">it's very impressive!</button>
-    <button (click)="onAddSomeNameClick()">Add some name</button>
-    <button (click)="onDoSomeChangeClick()">Do some change</button> -->
-
-    <!-- <ul *ngFor="let user of users, index as i">
-        <li>{{user}} <button (click)="onItemDelete(i)">delete</button></li>
-    </ul> -->
-
     <h4>Вход в систему</h4>
+
+    <!-- Форма входа -->
     <form #loginForm="ngForm" (ngSubmit)="onLoginSubmit(loginForm)">
         <!-- Email -->
         <div>
@@ -28,14 +21,14 @@
         </div>
         <div>
             <label for="password">Password: </label>
-            <input ngModel #passwordInput="ngModel" minlength="4" id="password" name="password" type="password" required
-                pattern="^(?=.*[A-z0-9]).{4,64}$">
+            <input ngModel #passwordInput="ngModel" minlength="3" id="password" name="password" type="password" required
+                pattern="^(?=.*[A-z0-9]).{3,64}$">
             <div class="form-error-log" *ngIf="passwordInput.touched && passwordInput.errors != null">
                 <div class="form-error-log-item" *ngIf="passwordInput.errors['required']">
                     Password field must be filled
                 </div>
                 <div class="form-error-log-item" *ngIf="passwordInput.errors['minlength']">
-                    Password must be at least 4 characters long
+                    Password must be at least 3 characters long
                 </div>
                 <div class="form-error-log-item" *ngIf="passwordInput.errors['pattern']">
                     only A-Z, a-z and 0-9 symbols allowed
@@ -43,10 +36,10 @@
             </div>
         </div>
         <!-- buttons -->
-        <div>
-            <input type="submit">
-            <button (click)="onClickButton(emailInput)">Do something</button>
-            <a routerLink="/admin_panel">link to admin panel</a>
+        <div class="flex-div">
+            <input type="submit" value="Log in">
+            <!-- <button (click)="onClickButton(emailInput)">Do something</button> -->
+            <!-- <a routerLink="/admin_panel">link to admin panel</a> -->
         </div>
     </form>
 </div>

@@ -25,16 +25,16 @@
       </thead>
 
       <tbody>
-        <tr *ngFor="let user of userService.users, index as i" [routerLink]="['/user_list', user.id]">
-          <td>{{user.id}} - {{user.firstname}}</td>
-          <td>{{user.lastname}}</td>
-          <td>{{user.age}}</td>
-          <div [ngSwitch]="user.role">
+        <tr *ngFor="let user of this.users, index as i" [routerLink]="['/user_list', user.id]">
+          <td>{{user.ID}} - {{user.FirstName}}</td>
+          <td>{{user.LastName}}</td>
+          <td>{{user.Birthdate}}</td>
+          <div [ngSwitch]="user.RoleID">
             <td *ngSwitchCase="1" style="font-weight: normal">Admin</td>
             <td *ngSwitchCase="2" style="font-weight: normal">User</td>
           </div>
-          <td>{{user.email}}</td>
-          <td>{{user.officeId}}</td>
+          <td>{{user.Email}}</td>
+          <td>{{user.OfficeID}}</td>
 
 
         </tr>

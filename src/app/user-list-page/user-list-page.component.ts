@@ -9,13 +9,21 @@ import {User, UsersService} from "../data-services/users.service";
 export class UserListPageComponent implements OnInit {
 
   userService: UsersService;
-  users: Array<Object> = [];
+  users: Array<any> = [];
 
   constructor(private usersService: UsersService) {
     this.userService = usersService;
+    let self = this;
     this.userService.getUsers().subscribe(function(res) {
-      console.log('ajax response: ')
-      console.log(res)
+      // console.log('ajax response: ')
+      // console.log(res)
+      if (Array.isArray(res)) {
+        self.users = Array.from(res);
+        console.log ('self.users:')
+        console.log(self.users);
+      } else {
+        console.log('glb error: response is not array')
+      }
     })
   }
 
