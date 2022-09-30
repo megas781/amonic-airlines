@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
 import jsonData from '../mock-data/users.json';
-
+import { HttpClient } from '@angular/common/http'
+import * as SERVER from './server-metadata';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +12,11 @@ export class UsersService {
   data: Array<User> = [];
   users: Array<any> = [];
 
-  public getUsers(): Array<User> {
-    return this.users
+  // public getUsers(): Array<User> {
+  //   return this.users
+  // }
+  public getUsers(): Observable<Object> {
+    return this.httpClient.get(SERVER.URL + SERVER.KEYS.USERS,{headers: {}});
   }
 
   getUserById(id: number): User {
@@ -19,24 +24,11 @@ export class UsersService {
       if (id == this.users[i].id) {
         return this.users[i];
       }
-      
     }
     return null;
   }
 
-  constructor() {
-
-    let fetchedUsers = jsonData;
-
-    if (Array.isArray(fetchedUsers)) {
-      // console.log('it is array!');
-
-      for (let i = 0; i < fetchedUsers.length; i++) {
-        this.users.push(
-          new User(fetchedUsers[i])
-        )
-      }
-    }
+  constructor(private httpClient: HttpClient) {
 
   }
 

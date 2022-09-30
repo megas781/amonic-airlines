@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {UsersService} from "../data-services/users.service";
+import {User, UsersService} from "../data-services/users.service";
 
 @Component({
   selector: 'app-user-list-page',
@@ -9,9 +9,14 @@ import {UsersService} from "../data-services/users.service";
 export class UserListPageComponent implements OnInit {
 
   userService: UsersService;
+  users: Array<Object> = [];
 
-  constructor(users: UsersService) {
-    this.userService = users
+  constructor(private usersService: UsersService) {
+    this.userService = usersService;
+    this.userService.getUsers().subscribe(function(res) {
+      console.log('ajax response: ')
+      console.log(res)
+    })
   }
 
   ngOnInit(): void {

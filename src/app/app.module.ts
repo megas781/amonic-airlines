@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 // FormsModule must be explicitly imported to use [(ngModel)] and other directives
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http'
 
 //gleb core
 import { HeaderComponent } from './master/header/header.component';
@@ -48,6 +49,8 @@ import { BookingConfirmPageComponent } from './flight-search-page/booking-confir
     BrowserModule,
     //Must be imported to use ngModel
     FormsModule,
+    // HttpClientModule импортируем, чтобы пользоваться встроенным HttpClient для ajax-запросов
+    HttpClientModule,
     // в параметре метода forRoot декларируем все пути
     RouterModule.forRoot([
       { path: "", component: LoginPageComponent },
