@@ -11,6 +11,8 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+create schema `session3_xx`;
+
 use `session3_xx`;
 
 DROP TABLE IF EXISTS `aircrafts`;
