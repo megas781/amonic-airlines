@@ -15,6 +15,8 @@ import { NotFoundPageComponent } from './general-pages/not-found-page/not-found-
 
 //services
 import {UsersService} from "./data-services/users.service";
+import { LoginService } from "./data-services/login.service";
+import { UserLogsService } from "./data-services/user-logs.service";
 
 //userList block
 import { UserListPageComponent } from './user-list-page/user-list-page.component';
@@ -68,7 +70,11 @@ import { BookingConfirmPageComponent } from './flight-search-page/booking-confir
       { path: "**", component: NotFoundPageComponent},
     ])
   ],
-  providers: [UsersService],
+  providers: [
+    UsersService, 
+    LoginService,
+    UserLogsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

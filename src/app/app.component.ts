@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { LoginService } from './data-services/login.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'amonic-airlines';
+  constructor (
+    private loginService: LoginService,
+    private route: ActivatedRoute
+    ) {
+      
+  }
 }
